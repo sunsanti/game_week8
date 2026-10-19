@@ -1,15 +1,17 @@
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelTrigger : MonoBehaviour
 {
+    public GameObject GameMenu;
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("!");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("!");
-            SceneManager.LoadScene("_Scene_1");
+            Debug.Log("Player collided with Wall!");
+
+            GameMenu.SetActive(true);
         }
     }
 }
