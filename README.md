@@ -29,7 +29,7 @@ Dự án mô phỏng điều khiển máy bay và cơ chế quản lý cảnh tr
 ## 📂 Cấu trúc Thư mục Chính
 
 ```text
-plane2/
+game_week8/
 ├── Assets/
 │   ├── AirplaneController.cs       # Điều khiển chuyển động bay của phi cơ
 │   ├── Scenes/
@@ -54,7 +54,7 @@ plane2/
 
 1. **Clone mã nguồn**:
    ```bash
-   git clone https://github.com/nt-hzy3n/plane_LTG-Week-8.git
+   git clone https://github.com/sunsanti/game_week8.git
    ```
 2. **Mở dự án trong Unity Hub**:
    - Mở **Unity Hub** -> Chọn **Add** -> Trỏ vào thư mục dự án vừa tải về.
@@ -67,5 +67,5 @@ plane2/
 
 ## 👨‍💻 Tác giả
 
-- **GitHub**: [@nt-hzy3n](https://github.com/nt-hzy3n)
+- **GitHub**: [@sunsanti](https://github.com/sunsanti)
 - Dự án phục vụ cho bài tập môn học Lập trình Game - Week 8.
