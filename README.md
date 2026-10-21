@@ -13,7 +13,7 @@ Máy bay tự bay về phía trước. Khi chạm vào bức tường (trigger),
 
 | File | Chức năng |
 |------|-----------|
-| `Assets/AirplaneController.cs` | Di chuyển máy bay ngược hướng `transform.forward` (theo hướng mũi của model) với tốc độ `speed` (mặc định 10) |
+| `Assets/AirplaneController.cs` | Di chuyển máy bay ngược hướng `transform.forward` với tốc độ `speed` (mặc định 10) |
 | `Assets/Scripts/LevelTrigger.cs` | Bắt `OnTriggerEnter` với object có tag `Player` và hiện `GameMenu` |
 | `Assets/Scripts/GameManager.cs` | Ẩn popup khi bắt đầu, đặt nội dung chữ, xử lý nút `NextScene()` / `RestartScene()` |
 
