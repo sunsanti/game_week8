@@ -1,71 +1,45 @@
-# ✈️ Plane Simulation - Lập Trình Game (Week 8)
+# Game Week 8 – Plane & Scene Management
 
-> **Môn học**: Lập Trình Game (Game Development)  
-> **Chủ đề tuần 8**: Scene Creation, Management & Game Flow Control  
-> **Unity Version**: `6000.4.5f1` (Unity 6)  
-> **Render Pipeline**: Universal Render Pipeline (URP)
+Bài tập tuần 8 môn **Lập trình Game**: tạo scene, quản lý scene và điều khiển luồng game trong Unity.
 
----
+## Nội dung
 
-## 📖 Giới thiệu Dự án
+Máy bay tự bay về phía trước. Khi chạm vào bức tường (trigger), game hiện popup với 2 lựa chọn:
 
-Dự án mô phỏng điều khiển máy bay và cơ chế quản lý cảnh trong game (Scene Management):
-- Điều khiển đối tượng máy bay bay thẳng về phía trước theo thời gian thực (`AirplaneController`).
-- Phát hiện va chạm thông qua vùng kích hoạt Trigger (`LevelTrigger`) để dừng/hiển thị hộp thoại kết thúc hoặc chuyển màn.
-- Giao diện người dùng (UI Canvas với TextMesh Pro): Cho phép người chơi nhấn **Enter** để chuyển sang cảnh tiếp theo hoặc **Restart** để chơi lại từ đầu (`GameManager`).
-- Quản lý và chuyển đổi qua lại giữa các Scene (`_Scene_0` và `_Scene_1`).
+- **Enter** – chuyển sang `_Scene_1`
+- **Restart** – tải lại `_Scene_0` để chơi lại
 
----
+## Scripts
 
-## 🛠️ Công nghệ & Yêu cầu hệ thống
+| File | Chức năng |
+|------|-----------|
+| `Assets/AirplaneController.cs` | Di chuyển máy bay theo hướng `forward` với tốc độ `speed` (mặc định 10) |
+| `Assets/Scripts/LevelTrigger.cs` | Bắt `OnTriggerEnter` với object có tag `Player` và hiện `GameMenu` |
+| `Assets/Scripts/GameManager.cs` | Ẩn popup khi bắt đầu, đặt nội dung chữ, xử lý nút `NextScene()` / `RestartScene()` |
 
-- **Engine**: Unity 6 (`6000.4.5f1` hoặc mới hơn)
-- **Render Pipeline**: Universal Render Pipeline (URP)
-- **UI System**: Unity UI (uGUI) & TextMesh Pro
-- **Hệ điều hành**: Windows 10/11, macOS hoặc Linux
+## Scenes
 
----
+Cả 2 scene đã được thêm vào **Build Settings**:
 
-## 📂 Cấu trúc Thư mục Chính
+1. `Assets/Scenes/_Scene_0.unity` – màn chơi chính
+2. `Assets/Scenes/_Scene_1.unity` – màn tiếp theo
 
-```text
-game_week8/
-├── Assets/
-│   ├── AirplaneController.cs       # Điều khiển chuyển động bay của phi cơ
-│   ├── Scenes/
-│   │   ├── _Scene_0.unity          # Cảnh mở đầu / Gameplay chính
-│   │   └── _Scene_1.unity          # Cảnh tiếp theo sau khi hoàn thành
-│   ├── Scripts/
-│   │   ├── GameManager.cs          # Quản lý giao diện, Next Scene & Restart
-│   │   └── LevelTrigger.cs         # Bắt va chạm Trigger để hiển thị Game Menu
-│   ├── Settings/                   # Thiết lập cấu hình URP
-│   └── TextMesh Pro/               # Tài nguyên font chữ và shader TextMesh Pro
-├── Packages/
-│   ├── manifest.json
-│   └── packages-lock.json
-├── ProjectSettings/                # Cài đặt cấu hình dự án Unity
-├── .gitignore                      # Bộ lọc bỏ thư mục tạm thời của Unity
-└── README.md
+## Yêu cầu
+
+- Unity **6000.4.5f1** (Unity 6)
+- Universal Render Pipeline (URP)
+- TextMesh Pro, uGUI
+
+## Cách chạy
+
+```bash
+git clone https://github.com/sunsanti/game_week8.git
 ```
 
----
+1. Mở **Unity Hub** → **Add** → chọn thư mục `game_week8`.
+2. Mở scene `Assets/Scenes/_Scene_0.unity`.
+3. Nhấn **Play**.
 
-## 🎮 Cách chạy dự án
+## Tác giả
 
-1. **Clone mã nguồn**:
-   ```bash
-   git clone https://github.com/sunsanti/game_week8.git
-   ```
-2. **Mở dự án trong Unity Hub**:
-   - Mở **Unity Hub** -> Chọn **Add** -> Trỏ vào thư mục dự án vừa tải về.
-   - Đảm bảo chọn Unity Editor phiên bản `6000.4.5f1` (Unity 6).
-3. **Mở Scene và Chơi**:
-   - Trong cửa sổ **Project**, điều hướng tới: `Assets/Scenes/_Scene_0.unity`.
-   - Nhấn nút **Play (▶️)** để bắt đầu trải nghiệm game.
-
----
-
-## 👨‍💻 Tác giả
-
-- **GitHub**: [@sunsanti](https://github.com/sunsanti)
-- Dự án phục vụ cho bài tập môn học Lập trình Game - Week 8.
+[@sunsanti](https://github.com/sunsanti)
